@@ -1,3 +1,6 @@
 pandas
-boto3
 gspread
+boto3
+psycopg2-binary
+apache-airflow[aws,postgres,celery]==3.1.8
+
