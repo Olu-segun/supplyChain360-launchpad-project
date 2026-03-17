@@ -2,6 +2,9 @@ pandas
 gspread
 boto3
 psycopg2-binary
+pyarrow==23.0.1
 apache-airflow==3.1.8
 apache-airflow-providers-amazon
-pyarrow=23.0.1
+apache-airflow-providers-postgres
+apache-airflow-providers-celery
+
