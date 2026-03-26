@@ -3,7 +3,9 @@ gspread
 boto3
 psycopg2-binary
 pyarrow==23.0.1
-apache-airflow[amazon]
+s3fs 
+tenacity
+google-api-python-client
 
 
 

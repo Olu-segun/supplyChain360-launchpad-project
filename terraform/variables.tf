@@ -6,9 +6,9 @@ variable "aws_region" {
 }
 
 variable "project_name" {
-  type = string
+  type        = string
   description = "Project name"
-  default = "supplychain360"
+  default     = "supplychain360"
 }
 
 variable "instance_type" {

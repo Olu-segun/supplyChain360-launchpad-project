@@ -32,11 +32,16 @@ x-airflow-common:
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
     # The following line can be used to set a custom config file, stored in the local config folder
     AIRFLOW_CONFIG: '/opt/airflow/config/airflow.cfg'
+    PYTHONPATH: /opt/airflow/dags:/opt/airflow
+
   volumes:
-    - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
-    - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
-    - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
-    - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
+    - ${AIRFLOW_PROJ_DIR:-.}/airflow/dags:/opt/airflow/dags
+    - ${AIRFLOW_PROJ_DIR:-.}/airflow/logs:/opt/airflow/logs
+    - ${AIRFLOW_PROJ_DIR:-.}/airflow/config:/opt/airflow/config
+    - ${AIRFLOW_PROJ_DIR:-.}/airflow/plugins:/opt/airflow/plugins
+    - ${AIRFLOW_PROJ_DIR:-.}/ingestion_layer:/opt/airflow/ingestion_layer
+    - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
+    - C:/Users/PALMPAY/.aws:/home/airflow/.aws:ro
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -77,6 +82,8 @@ services:
 
   airflow-apiserver:
     <<: *airflow-common
+    volumes:
+      - C:/Users/PALMPAY/.aws:/home/airflow/.aws:ro
     command: api-server
     ports:
       - "8080:8080"
@@ -91,9 +98,12 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
+    
 
   airflow-scheduler:
     <<: *airflow-common
+    volumes:
+      - C:/Users/PALMPAY/.aws:/home/airflow/.aws:ro
     command: scheduler
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -106,6 +116,7 @@ services:
       <<: *airflow-common-depends-on
       airflow-init:
         condition: service_completed_successfully
+    
 
   airflow-dag-processor:
     <<: *airflow-common
@@ -124,6 +135,8 @@ services:
 
   airflow-worker:
     <<: *airflow-common
+    volumes:
+      - C:/Users/PALMPAY/.aws:/home/airflow/.aws:ro
     command: celery worker
     healthcheck:
       # yamllint disable rule:line-length

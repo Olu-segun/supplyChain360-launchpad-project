@@ -10,3 +10,7 @@ plugins/
 plugings/
 config/
 logs/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd

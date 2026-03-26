@@ -1,8 +1,8 @@
 resource "aws_security_group" "supplychain360_sg" {
   name        = "supplychain360_sg"
   description = "Allow SSH inbound traffic"
-  vpc_id = aws_vpc.supplychain360_vpc.id
-  
+  vpc_id      = aws_vpc.supplychain360_vpc.id
+
 
   ingress {
     from_port   = 22
@@ -16,7 +16,7 @@ resource "aws_security_group" "supplychain360_sg" {
     from_port   = 8080
     to_port     = 8080
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"] 
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
