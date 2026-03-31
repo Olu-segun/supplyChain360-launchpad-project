@@ -34,14 +34,14 @@ Operational data is scattered across multiple systems:
 | CI/CD            | GitHub Actions |
 ---
 ## 📊 Data Sources
-| Source              | Type          | Frequency |
-| ------------------- | ------------- | --------- |
-| Product Catalog     | CSV (S3)      | Static    |
-| Store Locations     | Google Sheets | Static    |
-| Suppliers           | CSV (S3)      | Static    |
-| Warehouses          | CSV (S3)      | Static    |
-| Inventory Snapshots | CSV (S3)      | Daily     |
-| Shipment Logs       | JSON (S3)     | Daily     |
-| Sales Transactions  | PostgreSQL    | Daily     |
+| Source              | Type          | Frequency                     |
+| ------------------- | ------------- | ------------------------------|                 
+| Product Catalog     | CSV (S3)      | Static dataset (Rarely change)|
+| Store Locations     | Google Sheets | Static dataset (Rarely change)|
+| Suppliers           | CSV (S3)      | Static dataset (Rarely change)|
+| Warehouses          | CSV (S3)      | Static dataset (Rarely change)|
+| Inventory Snapshots | CSV (S3)      | Daily                         |
+| Shipment Logs       | JSON (S3)     | Daily                         |
+| Sales Transactions  | PostgreSQL    | Daily                         |
 
 
