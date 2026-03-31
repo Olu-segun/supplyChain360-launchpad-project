@@ -21,6 +21,27 @@ Operational data is scattered across multiple systems:
 - 🗄️ S3 (CSV/JSON files)
 - 🛢️ PostgreSQL transactional database
 - 📊 Google Sheets
-
+---
+## ⚙️ Tech Stack
+| Layer            | Tool           |
+| ---------------- | -------------- |
+| Orchestration    | Apache Airflow |
+| Storage          | AWS S3         |
+| Data Warehouse   | Snowflake      |
+| Transformation   | dbt            |
+| Infrastructure   | Terraform      |
+| Containerization | Docker         |
+| CI/CD            | GitHub Actions |
+---
+## 📊 Data Sources
+| Source              | Type          | Frequency |
+| ------------------- | ------------- | --------- |
+| Product Catalog     | CSV (S3)      | Static    |
+| Store Locations     | Google Sheets | Static    |
+| Suppliers           | CSV (S3)      | Static    |
+| Warehouses          | CSV (S3)      | Static    |
+| Inventory Snapshots | CSV (S3)      | Daily     |
+| Shipment Logs       | JSON (S3)     | Daily     |
+| Sales Transactions  | PostgreSQL    | Daily     |
 
 
