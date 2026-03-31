@@ -102,22 +102,20 @@ docker-compose up
 4. Run dbt
 cd dbt
 dbt build
-📈 Business Insights (Optional)
-Products causing most stockouts
-Suppliers with late deliveries
-Warehouse inefficiencies
-Demand trends by region
-📊 Architecture Diagram
-
+## 📈 Business Insights 
+- Products causing most stockouts
+- Suppliers with late deliveries
+- Warehouse inefficiencies
+- Demand trends by region
+----
+## 📊 Architecture Diagram
 (Add image in /docs/architecture.png)
-
-🎯 Outcome
-
+----
+## 🎯 Outcome
 This platform enables:
-
-Real-time decision-making
-Reduced stockouts
-Optimized inventory
-Improved delivery performance
+- Real-time decision-making
+- Reduced stockouts
+- Optimized inventory
+- Improved delivery performance
 
 
