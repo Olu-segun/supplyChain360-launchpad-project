@@ -6,10 +6,11 @@ SupplyChain360 is a fast‑growing retail distribution company in the United Sta
 This project builds a Unified Supply Chain Data Platform to centralize operational data, improve analytics, and enable better decision‑making in inventory planning, supplier performance monitoring, shipment tracking, and demand forecasting.
 
 ### The platform enables:
-• 📦 Inventory optimization
-• 🚚 Shipment tracking
-• 🏭 Warehouse efficiency analysis
-• 🤝 Supplier performance monitoring
+The platform enables:
+- 📦 **Inventory optimization**
+- 🚚 **Shipment tracking**
+- 🏭 **Warehouse efficiency analysis**
+- 🤝 **Supplier performance monitoring**
 ---
 ## 🧠 Business Problem
 ### The company struggles with:
