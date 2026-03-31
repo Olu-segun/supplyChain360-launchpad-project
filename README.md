@@ -52,7 +52,7 @@ Airflow orchestrates:
 - Transform data using dbt
 - Run data quality checks
 - Build analytical models
-
+----
 ## 🧱 Data Modeling
 #### Layers:
 - RAW → Unprocessed data
@@ -63,5 +63,10 @@ Airflow orchestrates:
 - dim_products
 - dim_suppliers
 - fact_shipments
+## 🧹 Data Cleaning
+- Standardized column names
+- Removed duplicates
+- Handled null values
+- Enforced referential integrity
 
 
