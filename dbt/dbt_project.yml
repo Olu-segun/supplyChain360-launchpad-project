@@ -1,0 +1,23 @@
+name: 'supplychain360'
+version: '1.0.0'
+
+profile: 'supplychain360'
+
+model-paths: ["supplychain360/models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:        
+  - "target"
+  - "dbt_packages"
+
+
+models:
+  supplychain360:
+    staging:
+      +materialized: table
+    marts:
+      +materialized: table
