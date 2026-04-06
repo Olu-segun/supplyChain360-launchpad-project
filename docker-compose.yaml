@@ -3,8 +3,9 @@
 x-airflow-common:
   &airflow-common
   
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:3.1.8}
-  # build: .
+  build:
+    context: .
+    dockerfile: Dockerfile
   env_file:
     - ${ENV_FILE_PATH:-.env}
   environment:
@@ -26,7 +27,7 @@ x-airflow-common:
     PYTHONPATH: /opt/airflow
     
 
-     # SMTP configuration for mail
+     # SMTP configuration for mail 
     AIRFLOW__SMTP__SMTP_HOST: smtp.gmail.com
     AIRFLOW__SMTP__SMTP_PORT: 587
     AIRFLOW__SMTP__SMTP_MAIL_FROM: "${SMTP_USER}"
@@ -39,9 +40,11 @@ x-airflow-common:
   - ${AIRFLOW_PROJ_DIR:-.}/airflow/logs:/opt/airflow/logs
   - ${AIRFLOW_PROJ_DIR:-.}/airflow/config:/opt/airflow/config
   - ${AIRFLOW_PROJ_DIR:-.}/airflow/plugins:/opt/airflow/plugins
-
   - ${AIRFLOW_PROJ_DIR:-.}/ingestion_layer:/opt/airflow/ingestion_layer
   - ${AIRFLOW_PROJ_DIR:-.}/scripts:/opt/airflow/scripts
+  - ${AIRFLOW_PROJ_DIR:-.}/dbt:/opt/airflow/dbt 
+  - ./dbt/profiles.yml:/home/airflow/.dbt/profiles.yml
+  
 
   - C:/Users/PALMPAY/.aws:/home/airflow/.aws:ro
 

@@ -25,21 +25,24 @@ models:
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: unit_price
         description: The price per unit for the products sold.
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
       - name: sales_amount
         description: The total amount for the sales transaction
         tests:
           - not_null
           - dbt_utils.expression_is_true:
-              expression: ">= 0"
+              arguments:
+                expression: ">= 0"
 
 
   - name: stg_suppliers
@@ -48,5 +51,5 @@ models:
   - name: stg_inventory
     description: Staging table for inventory data
 
-  - name: stg_warehouses
+  - name: stg_warehouse
     description: Staging table for warehouse data
