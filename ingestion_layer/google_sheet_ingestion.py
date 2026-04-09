@@ -5,7 +5,7 @@ from io import BytesIO
 from datetime import datetime,timezone
 from tenacity import retry, stop_after_attempt, wait_exponential
 from googleapiclient.discovery import build
-from scripts.utils import get_google_service_account_credentials
+from utils.credentials import get_google_service_account_credentials
 from airflow.utils.log.logging_mixin import LoggingMixin
 
 

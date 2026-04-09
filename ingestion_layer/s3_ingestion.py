@@ -8,7 +8,7 @@ from io import BytesIO
 from datetime import datetime, timezone
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from botocore.exceptions import ClientError
-from scripts.utils import get_source_s3_client, get_destination_s3_client
+from utils.credentials import get_source_s3_client, get_destination_s3_client
 from airflow.utils.log.logging_mixin import LoggingMixin
 
 

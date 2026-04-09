@@ -4,7 +4,7 @@ from io import BytesIO
 from botocore.exceptions import ClientError
 from datetime import datetime, timezone
 from tenacity import retry, stop_after_attempt, wait_exponential
-from scripts.utils import get_db_engine, get_destination_s3_client
+from utils.credentials import get_db_engine, get_destination_s3_client
 from airflow.utils.log.logging_mixin import LoggingMixin
 
 
