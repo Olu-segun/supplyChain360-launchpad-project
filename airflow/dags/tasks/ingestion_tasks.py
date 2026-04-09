@@ -3,7 +3,7 @@ from airflow.sdk import TaskGroup
 
 """ 
 Create Ingestion Tasks for S3, Postgres, and Google Sheets. 
- Each task will call the respective ingestion pipeline function 
+Each task will call the respective ingestion pipeline function 
 defined in the ingestion_layer modules.
                                         """
 
