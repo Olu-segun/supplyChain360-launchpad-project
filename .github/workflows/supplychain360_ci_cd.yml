@@ -32,18 +32,19 @@ jobs:
         run: |
           mkdir -p ~/.dbt
           cat <<EOF > ~/.dbt/profiles.yml
+
           supplychain360:
             target: dev
             outputs:
               dev:
                 account: ${{ secrets.snowflake_account }}
-                database: supplychain360_db
+                database: ${{ secrets.snowflake_database }}
                 password: ${{ secrets.snowflake_password }}
-                role: supplychain360_role
+                role: ${{ secrets.snowflake_role }}
                 schema: staging
                 threads: 4
                 type: snowflake
-                user: ERIC
+                user: ${{ secrets.snowflake_user }}
                 warehouse: supplychain360_wh
               
           EOF
