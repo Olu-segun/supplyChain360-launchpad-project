@@ -55,7 +55,7 @@ jobs:
       - name: Run dbt debug
         working-directory: ./dbt
         run: dbt debug
-
+        
       - name: Run dbt tests
         working-directory: ./dbt
         run: dbt test
