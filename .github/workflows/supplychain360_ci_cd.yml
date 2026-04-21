@@ -28,10 +28,12 @@ jobs:
           flake8 .
 
       - name: Run dbt deps
+        working-directory: ./dbt
         run: dbt deps
 
       - name: Run dbt debug
         run: dbt debug
 
       - name: Run dbt tests
+        working-directory: ./dbt
         run: dbt test
