@@ -6,9 +6,11 @@ from tasks.dbt_tasks import run_dbt
 from tasks.ingestion_tasks import create_ingestion_group
 from tasks.snowflake_tasks import snowflake_copy_tasks
 from tasks.success_mail_alert import dag_success_alert
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Create Airflow DAG for SupplyChain360 Data Pipeline with Ingestion Tasks, Snowflake Copy Tasks, and DBT Transformations.
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+# Create Airflow DAG for SupplyChain360 Data Pipeline with Ingestion
+# Tasks, Snowflake Copy Tasks, and DBT Transformations.
 
 default_args = {
     "owner": "olukayode_olusegun",

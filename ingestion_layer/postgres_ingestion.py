@@ -7,8 +7,6 @@ from airflow.utils.log.logging_mixin import LoggingMixin
 from tenacity import retry, stop_after_attempt, wait_exponential
 from utils.credentials import get_db_engine, get_destination_s3_client
 
-
-
 # Configuration
 BUCKET = "supplychain360-data-lake"
 TARGET_PREFIX = "raw/store_sales_transactions/"

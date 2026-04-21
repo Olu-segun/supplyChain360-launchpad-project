@@ -8,7 +8,6 @@ from airflow.utils.log.logging_mixin import LoggingMixin
 from tenacity import retry, stop_after_attempt, wait_exponential
 from utils.credentials import get_google_service_account_credentials
 
-
 # Configuration
 S3_BUCKET = "supplychain360-data-lake"
 TARGET_PREFIX = "raw/retail_store_locations/"

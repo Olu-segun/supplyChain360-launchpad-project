@@ -11,7 +11,6 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from airflow.utils.log.logging_mixin import LoggingMixin
 from utils.credentials import get_destination_s3_client, get_source_s3_client
 
-
 # Configuration
 SOURCE_BUCKET = "supplychain360-data"
 TARGET_BUCKET = "supplychain360-data-lake"
@@ -88,7 +87,7 @@ def log_memory():
         process = psutil.Process(os.getpid())
         mem = process.memory_info().rss / 1024**2
         logger.info(f"Memory usage: {mem:.2f} MB")
-    except:
+    except BaseException:
         pass
 
 
@@ -122,7 +121,8 @@ def process_file(key, target_prefix):
         # Convert to Arrow Table for efficient Parquet writing and to handle complex data types better
         table = pa.Table.from_pandas(df)
 
-        # Write to buffer in Parquet format using PyArrow for better performance and compatibility with complex data types
+        # Write to buffer in Parquet format using PyArrow for better performance
+        # and compatibility with complex data types
         buf = pa.BufferOutputStream()
         pq.write_table(table, buf)
 
@@ -175,5 +175,6 @@ def s3_ingestion_pipeline():
 
     save_processed_files(processed_files)
     logger.info("Pipeline completed successfully.")
-    
+
+
 s3_ingestion_pipeline()
