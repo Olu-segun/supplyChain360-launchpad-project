@@ -1,7 +1,7 @@
 
-# ----------------------------
-# IAM ROLE (Trust Policy)
-# ----------------------------
+
+# IAM Role for Snowflake to access S3
+
 resource "aws_iam_role" "snowflake_s3_role" {
   name = "snowflake_s3_role"
 
@@ -24,9 +24,8 @@ resource "aws_iam_role" "snowflake_s3_role" {
   })
 }
 
-# ----------------------------
-# S3 ACCESS POLICY
-# ----------------------------
+
+# S3 Access Policy
 resource "aws_iam_policy" "snowflake_s3_policy" {
   name = "snowflake_s3_access_policy"
 
@@ -52,9 +51,8 @@ resource "aws_iam_policy" "snowflake_s3_policy" {
   })
 }
 
-# ----------------------------
-# ATTACH POLICY TO ROLE
-# ----------------------------
+
+# Attach the policy to the role
 resource "aws_iam_role_policy_attachment" "attach_policy" {
   role       = aws_iam_role.snowflake_s3_role.name
   policy_arn = aws_iam_policy.snowflake_s3_policy.arn
