@@ -70,6 +70,7 @@ supplychain360/
 ├── requirements.txt
 ├── README.md
 └── architecture.png
+```
 ----
 ## ⚙️ Tech Stack
 | Layer            | Tool           |
