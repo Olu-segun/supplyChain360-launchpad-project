@@ -41,11 +41,12 @@ jobs:
                 database: ${{ secrets.snowflake_database }}
                 password: ${{ secrets.snowflake_password }}
                 role: ${{ secrets.snowflake_role }}
+                user: ${{ secrets.snowflake_username }}
+                warehouse: ${{ secrets.snowflake_warehouse }}
                 schema: staging
                 threads: 4
                 type: snowflake
-                user: ${{ secrets.snowflake_user }}
-                warehouse: ${{ secrets.snowflake_warehouse }}
+                
               
           EOF
 
