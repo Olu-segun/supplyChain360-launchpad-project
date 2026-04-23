@@ -61,10 +61,10 @@ jobs:
           dbt debug
           dbt build
           
-      # - name: Run dbt build
-      #   working-directory: ./dbt
-      #   run: dbt build
-
-      # - name: Run dbt tests
-      #   working-directory: ./dbt
-      #   run: dbt test
+      - name: build and push docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.dockerhub_username }}/supplychain360-app:v1
+          
