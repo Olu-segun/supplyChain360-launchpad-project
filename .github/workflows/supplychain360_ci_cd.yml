@@ -61,6 +61,12 @@ jobs:
           dbt debug
           dbt build
           
+      - name: docker login
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.dockerhub_username }}
+          password: ${{ secrets.dockerhub_access_token }}
+
       - name: build and push docker image
         uses: docker/build-push-action@v4
         with:
@@ -68,3 +74,4 @@ jobs:
           push: true
           tags: ${{ secrets.dockerhub_username }}/supplychain360-app:v1
           
+    
