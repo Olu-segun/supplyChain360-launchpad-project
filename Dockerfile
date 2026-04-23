@@ -11,7 +11,7 @@ USER airflow
 
 WORKDIR /opt/airflow
 
-# Install Python dependencies
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -21,7 +21,7 @@ COPY dbt/ /opt/airflow/dbt/
 COPY airflow/dags/ /opt/airflow/dags/
 COPY utils/ /opt/airflow/utils/
 
-# Fix module import issue
+
 ENV PYTHONPATH=/opt/airflow
 
 CMD ["airflow", "standalone"]
