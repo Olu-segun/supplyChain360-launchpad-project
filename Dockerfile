@@ -23,3 +23,5 @@ COPY utils/ /opt/airflow/utils/
 
 # Fix module import issue
 ENV PYTHONPATH=/opt/airflow
+
+CMD ["airflow", "standalone"]
