@@ -24,7 +24,7 @@ Operational data is scattered across multiple systems:
 ---
 ## 📊 Architecture Diagram
 
-<img src="architecture_diagram.png" alt="Architecture Diagram" width="500">
+<img src="architecture_diagram.png" alt="Architecture Diagram" width="600">
 
 ---
 ## 📂 Project Folder Structure
