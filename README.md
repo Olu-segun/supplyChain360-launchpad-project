@@ -140,7 +140,7 @@ Example Models:
 ## 🐳 Containerization
 The entire pipeline is containerized using Docker.
 
-`docker build -t supplychain360 .`
+`docker build -t supplychain360-app .`
 
 ## ⚙️ CI/CD Pipeline
 GitHub Actions handles:
